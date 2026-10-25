@@ -5,94 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Omladina – Zajednica Bošnjaka Georgia</title>
   <meta name="description" content="Omladina Zajednice Bošnjaka Georgia (ZBGA) – aktivnosti, programi i događaji za mlade.">
+  <link rel="icon" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Top bar -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>950 Grayson Hwy, Lawrenceville, GA 30046</span>
-      <a href="tel:+17708649328">+1 (770) 864-9328</a>
-    </div>
-  </div>
+  <!-- Hero -->
+  <header class="hero" id="pocetna">
+    <div class="hero-bg" aria-hidden="true"></div>
 
-  <!-- Header / navigation -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="" class="logo-img" onerror="this.remove()">
-        <span class="logo-text">
-          <strong>Zajednica Bošnjaka Georgia</strong>
-          <small>Omladina</small>
-        </span>
-      </a>
+    <a href="https://zbga.org" class="pill" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M3 12l6-6M3 12l6 6"/></svg>
+      ZBGA.org
+    </a>
 
-      <button class="nav-toggle" aria-label="Otvori meni" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="container hero-content">
+      <img src="images/logo.png" alt="Zajednica Bošnjaka Georgia logo" class="hero-logo">
+      <h1>Omladina ZBGA</h1>
+      <p class="hero-text">Zajednica Bošnjaka Georgia - Mladi u službi vjere, znanja i zajednice.</p>
 
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#pocetna" class="active">Početna</a></li>
-          <li><a href="#o-nama">O Nama</a></li>
-          <li><a href="#aktivnosti">Aktivnosti</a></li>
-          <li><a href="#novosti">Novosti</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-          <li><a href="https://zbga.org" class="nav-btn" target="_blank" rel="noopener">ZBGA.org</a></li>
-        </ul>
-      </nav>
+      <div class="hero-buttons">
+        <a href="#kontakt" class="btn btn-green">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-7 7-7s7 3 7 7M19 8v6M16 11h6"/></svg>
+          Pridruži se
+        </a>
+        <a href="#aktivnosti" class="btn btn-red">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Aktivnosti
+        </a>
+        <a href="#novosti" class="btn btn-blue">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5"/></svg>
+          Novosti
+        </a>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero" id="pocetna">
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <p class="hero-eyebrow">Dobrodošli</p>
-        <h1>Omladina Zajednice Bošnjaka Georgia</h1>
-        <p class="hero-text">Mjesto gdje mladi uče, druže se i rastu zajedno – u vjeri, znanju i zajednici.</p>
-        <div class="hero-buttons">
-          <a href="#aktivnosti" class="btn btn-primary">Naše aktivnosti</a>
-          <a href="#kontakt" class="btn btn-outline">Pridruži se</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="o-nama">
-      <div class="container two-col">
-        <div>
-          <h2 class="section-title">O Nama</h2>
-          <p>Omladina ZBGA okuplja mlade Bošnjake iz Atlante i okoline. Kroz predavanja, sportske aktivnosti, druženja i humanitarne akcije gradimo snažnu i povezanu generaciju koja čuva svoj identitet, vjeru i tradiciju.</p>
-          <p>Sastajemo se u prostorijama džemata u Lawrencevilleu. Svi mladi su dobrodošli.</p>
-        </div>
-        <div class="about-image" aria-hidden="true"></div>
-      </div>
-    </section>
-
     <!-- Activities -->
-    <section class="section section-alt" id="aktivnosti">
+    <section class="section" id="aktivnosti">
       <div class="container">
-        <h2 class="section-title center">Aktivnosti</h2>
+        <h2 class="section-title">Aktivnosti</h2>
+        <p class="section-sub">Programi za mlade naše zajednice</p>
         <div class="cards">
           <article class="card">
+            <span class="card-icon icon-green"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM8 7h8"/></svg></span>
             <h3>Predavanja</h3>
             <p>Sedmična predavanja i halke za mlade na teme vjere i svakodnevnog života.</p>
           </article>
           <article class="card">
+            <span class="card-icon icon-orange"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
             <h3>Sport</h3>
             <p>Fudbal, košarka i druge sportske aktivnosti za sve uzraste.</p>
           </article>
           <article class="card">
+            <span class="card-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M14 15c3 0 8 1 8 5"/></svg></span>
             <h3>Druženja</h3>
             <p>Iftari, izleti i večeri druženja koje povezuju mlade naše zajednice.</p>
           </article>
           <article class="card">
+            <span class="card-icon icon-red"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/></svg></span>
             <h3>Humanitarni rad</h3>
             <p>Volontiranje i humanitarne akcije za pomoć onima kojima je potrebna.</p>
           </article>
@@ -101,21 +76,22 @@
     </section>
 
     <!-- News -->
-    <section class="section" id="novosti">
+    <section class="section section-white" id="novosti">
       <div class="container">
-        <h2 class="section-title center">Novosti</h2>
-        <div class="cards news">
-          <article class="card">
+        <h2 class="section-title">Novosti</h2>
+        <p class="section-sub">Najnovije vijesti i događaji</p>
+        <div class="cards cards-3">
+          <article class="card card-left">
             <span class="card-date">Uskoro</span>
             <h3>Prvi sastanak omladine</h3>
             <p>Detalji o prvom sastanku bit će objavljeni uskoro.</p>
           </article>
-          <article class="card">
+          <article class="card card-left">
             <span class="card-date">Uskoro</span>
             <h3>Sportski turnir</h3>
             <p>Pripremamo turnir za mlade. Pratite nas za više informacija.</p>
           </article>
-          <article class="card">
+          <article class="card card-left">
             <span class="card-date">Uskoro</span>
             <h3>Omladinski izlet</h3>
             <p>Planiramo zajednički izlet. Prijave uskoro.</p>
@@ -124,19 +100,30 @@
       </div>
     </section>
 
+    <!-- About -->
+    <section class="section" id="o-nama">
+      <div class="container narrow">
+        <h2 class="section-title">O Nama</h2>
+        <p class="lead">Omladina ZBGA okuplja mlade Bošnjake iz Atlante i okoline. Kroz predavanja, sportske aktivnosti, druženja i humanitarne akcije gradimo snažnu i povezanu generaciju koja čuva svoj identitet, vjeru i tradiciju. Svi mladi su dobrodošli.</p>
+      </div>
+    </section>
+
     <!-- Contact -->
-    <section class="section section-alt" id="kontakt">
-      <div class="container two-col">
-        <div>
-          <h2 class="section-title">Kontakt</h2>
-          <ul class="contact-list">
-            <li><strong>Adresa:</strong> 950 Grayson Hwy, Lawrenceville, GA 30046</li>
-            <li><strong>Telefon:</strong> <a href="tel:+17708649328">+1 (770) 864-9328</a></li>
-          </ul>
-        </div>
-        <div class="map">
-          <iframe title="Mapa – Zajednica Bošnjaka Georgia" loading="lazy"
-            src="https://maps.google.com/maps?q=950%20Grayson%20Hwy%2C%20Lawrenceville%2C%20GA%2030046&output=embed"></iframe>
+    <section class="section section-white" id="kontakt">
+      <div class="container">
+        <h2 class="section-title">Kontakt</h2>
+        <p class="section-sub">Posjetite nas ili nas kontaktirajte</p>
+        <div class="contact-grid">
+          <div class="card card-left">
+            <h3>Adresa</h3>
+            <p>950 Grayson Hwy<br>Lawrenceville, GA 30046</p>
+            <h3>Telefon</h3>
+            <p><a href="tel:+17708649328">+1 (770) 864-9328</a></p>
+          </div>
+          <div class="map">
+            <iframe title="Mapa – Zajednica Bošnjaka Georgia" loading="lazy"
+              src="https://maps.google.com/maps?q=950%20Grayson%20Hwy%2C%20Lawrenceville%2C%20GA%2030046&output=embed"></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -144,28 +131,10 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Zajednica Bošnjaka Georgia</h4>
-        <p>Omladina ZBGA – mladi u službi vjere i zajednice.</p>
-      </div>
-      <div>
-        <h4>Linkovi</h4>
-        <ul>
-          <li><a href="#o-nama">O Nama</a></li>
-          <li><a href="#aktivnosti">Aktivnosti</a></li>
-          <li><a href="#novosti">Novosti</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Kontakt</h4>
-        <p>950 Grayson Hwy<br>Lawrenceville, GA 30046</p>
-        <p><a href="tel:+17708649328">+1 (770) 864-9328</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">&copy; <span id="year"></span> Zajednica Bošnjaka Georgia. Sva prava zadržana.</div>
+    <div class="container footer-inner">
+      <img src="images/logo.png" alt="" class="footer-logo">
+      <p>&copy; <span id="year"></span> Zajednica Bošnjaka Georgia &middot; Omladina</p>
+      <a href="https://zbga.org" target="_blank" rel="noopener">zbga.org</a>
     </div>
   </footer>
 
