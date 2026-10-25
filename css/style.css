@@ -177,7 +177,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .section-dark .section-title { color: #fff; }
 .section-dark .section-sub { color: rgba(255, 255, 255, 0.7); }
 
-.team { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 32px 20px; }
+.team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 20px; }
 .member h3 { color: #fff; font-size: 1.1rem; margin-top: 18px; }
 .role { color: var(--gold-light); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
 
