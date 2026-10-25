@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Omladina – Zajednica Bošnjaka Georgia</title>
-  <meta name="description" content="Omladina Zajednice Bošnjaka Georgia (ZBGA) – aktivnosti, programi i događaji za mlade.">
+  <meta name="description" content="Omladina Zajednice Bošnjaka Georgia (ZBGA) – aktivnosti, događaji i program za mlade u Atlanti.">
+  <meta name="theme-color" content="#13291f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Omladina ZBGA – Zajednica Bošnjaka Georgia">
+  <meta property="og:description" content="Mladi u službi vjere, znanja i zajednice. Aktivnosti, događaji i odbor Omladine ZBGA.">
+  <meta property="og:image" content="images/hero.jpg">
   <link rel="icon" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
@@ -14,37 +20,66 @@
 </head>
 <body>
 
+  <a href="#main" class="skip-link" data-i18n="skip">Preskoči na sadržaj</a>
+
+  <!-- Sticky navigation (appears after the hero) -->
+  <nav class="navbar" aria-label="Glavni meni">
+    <div class="container navbar-inner">
+      <a href="#pocetna" class="nav-brand">
+        <img src="images/logo.png" alt="">
+        <span>Omladina ZBGA</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#aktivnosti" data-i18n="nav.activities">Aktivnosti</a></li>
+        <li><a href="#dogadjaji" data-i18n="nav.events">Događaji</a></li>
+        <li><a href="#novosti" data-i18n="nav.news">Novosti</a></li>
+        <li><a href="#o-nama" data-i18n="nav.about">O nama</a></li>
+        <li><a href="#odbor" data-i18n="nav.board">Odbor</a></li>
+        <li><a href="#kontakt" data-i18n="nav.contact">Kontakt</a></li>
+      </ul>
+      <div class="nav-right">
+        <button type="button" class="lang-toggle lang-toggle-sm" aria-label="Switch language">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h8M8 3v2M6 5c0 4 3 7 6 8M10 5c0 3-3 7-6 8M13 21l4-10 4 10M14.5 18h5"/></svg>
+          <span class="lang-label">English</span>
+        </button>
+        <button type="button" class="nav-toggle" aria-label="Meni" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero -->
   <header class="hero" id="pocetna">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="pattern" aria-hidden="true"></div>
 
-    <a href="https://zbga.org" class="pill" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M3 12l6-6M3 12l6 6"/></svg>
-      ZBGA.org
-    </a>
+    <button type="button" class="lang-toggle pill" aria-label="Switch language">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h8M8 3v2M6 5c0 4 3 7 6 8M10 5c0 3-3 7-6 8M13 21l4-10 4 10M14.5 18h5"/></svg>
+      <span class="lang-label">English</span>
+    </button>
 
     <div class="container hero-content">
       <div class="logo-frame">
         <img src="images/logo.png" alt="Zajednica Bošnjaka Georgia logo" class="hero-logo">
       </div>
       <p class="bismillah" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-      <h1>Omladina ZBGA</h1>
-      <p class="hero-text">Zajednica Bošnjaka Georgia - Mladi u službi vjere, znanja i zajednice.</p>
+      <h1 data-i18n="hero.title">Omladina ZBGA</h1>
+      <p class="hero-text" data-i18n="hero.text">Zajednica Bošnjaka Georgia - Mladi u službi vjere, znanja i zajednice.</p>
       <div class="ornament" aria-hidden="true"><span></span></div>
 
       <div class="hero-buttons">
         <a href="#kontakt" class="btn btn-green">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-7 7-7s7 3 7 7M19 8v6M16 11h6"/></svg>
-          Pridruži se
+          <span data-i18n="hero.join">Pridruži se</span>
         </a>
-        <a href="#aktivnosti" class="btn btn-red">
+        <a href="#dogadjaji" class="btn btn-red">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          Aktivnosti
+          <span data-i18n="hero.events">Kalendar</span>
         </a>
         <a href="#odbor" class="btn btn-blue">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M14 15c3 0 8 1 8 5"/></svg>
-          Naš odbor
+          <span data-i18n="hero.board">Naš odbor</span>
         </a>
       </div>
     </div>
@@ -52,71 +87,95 @@
     <div class="arches" aria-hidden="true"></div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- Activities -->
     <section class="section" id="aktivnosti">
       <div class="container">
-        <h2 class="section-title">Aktivnosti</h2>
+        <h2 class="section-title" data-i18n="act.title">Aktivnosti</h2>
         <div class="ornament" aria-hidden="true"><span></span></div>
-        <p class="section-sub">Programi za mlade naše zajednice</p>
+        <p class="section-sub" data-i18n="act.sub">Programi za mlade naše zajednice</p>
         <div class="cards">
           <article class="card reveal">
             <span class="card-icon icon-green"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM8 7h8"/></svg></span>
-            <h3>Predavanja</h3>
-            <p>Sedmična predavanja i halke za mlade na teme vjere i svakodnevnog života.</p>
+            <h3 data-i18n="act.lectures">Predavanja</h3>
+            <p data-i18n="act.lectures.text">Sedmična predavanja i halke za mlade na teme vjere i svakodnevnog života.</p>
           </article>
           <article class="card reveal">
             <span class="card-icon icon-orange"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
-            <h3>Sport</h3>
-            <p>Fudbal, košarka i druge sportske aktivnosti za sve uzraste.</p>
+            <h3 data-i18n="act.sport">Sport</h3>
+            <p data-i18n="act.sport.text">Fudbal, košarka i druge sportske aktivnosti za sve uzraste.</p>
           </article>
           <article class="card reveal">
             <span class="card-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M14 15c3 0 8 1 8 5"/></svg></span>
-            <h3>Druženja</h3>
-            <p>Iftari, izleti i večeri druženja koje povezuju mlade naše zajednice.</p>
+            <h3 data-i18n="act.social">Druženja</h3>
+            <p data-i18n="act.social.text">Iftari, izleti i večeri druženja koje povezuju mlade naše zajednice.</p>
           </article>
           <article class="card reveal">
             <span class="card-icon icon-red"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/></svg></span>
-            <h3>Humanitarni rad</h3>
-            <p>Volontiranje i humanitarne akcije za pomoć onima kojima je potrebna.</p>
+            <h3 data-i18n="act.charity">Humanitarni rad</h3>
+            <p data-i18n="act.charity.text">Volontiranje i humanitarne akcije za pomoć onima kojima je potrebna.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events calendar -->
+    <section class="section section-white" id="dogadjaji">
+      <div class="pattern pattern-light" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="section-title" data-i18n="ev.title">Događaji</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+        <p class="section-sub" data-i18n="ev.sub">Pogledajte šta dolazi i dodajte događaje u svoj kalendar</p>
+
+        <div class="calendar-wrap">
+          <div class="calendar reveal">
+            <div class="cal-header">
+              <button type="button" class="cal-nav" id="cal-prev" aria-label="Prethodni mjesec">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+              </button>
+              <h3 id="cal-month" aria-live="polite"></h3>
+              <button type="button" class="cal-nav" id="cal-next" aria-label="Sljedeći mjesec">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+            <div class="cal-weekdays" id="cal-weekdays"></div>
+            <div class="cal-grid" id="cal-grid" role="grid"></div>
+            <button type="button" class="cal-today" id="cal-today" data-i18n="cal.today">Danas</button>
+          </div>
+
+          <div class="agenda reveal">
+            <h3 id="agenda-title"></h3>
+            <div id="agenda-list"></div>
+            <button type="button" class="btn-outline" id="cal-download-all" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+              <span data-i18n="cal.addAll">Dodaj sve događaje u kalendar</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- News -->
-    <section class="section section-white" id="novosti">
-      <div class="pattern pattern-light" aria-hidden="true"></div>
+    <section class="section" id="novosti">
       <div class="container">
-        <h2 class="section-title">Novosti</h2>
+        <h2 class="section-title" data-i18n="news.title">Novosti</h2>
         <div class="ornament" aria-hidden="true"><span></span></div>
-        <p class="section-sub">Najnovije vijesti i događaji</p>
-        <div class="cards cards-3">
-          <article class="card card-left reveal">
-            <span class="card-date">Uskoro</span>
-            <h3>Prvi sastanak omladine</h3>
-            <p>Detalji o prvom sastanku bit će objavljeni uskoro.</p>
-          </article>
-          <article class="card card-left reveal">
-            <span class="card-date">Uskoro</span>
-            <h3>Sportski turnir</h3>
-            <p>Pripremamo turnir za mlade. Pratite nas za više informacija.</p>
-          </article>
-          <article class="card card-left reveal">
-            <span class="card-date">Uskoro</span>
-            <h3>Omladinski izlet</h3>
-            <p>Planiramo zajednički izlet. Prijave uskoro.</p>
-          </article>
+        <p class="section-sub" data-i18n="news.sub">Najnovije vijesti iz Omladine</p>
+        <div class="coming-soon reveal">
+          <span class="coming-star" aria-hidden="true"></span>
+          <h3 data-i18n="news.soon">Novosti uskoro</h3>
+          <p data-i18n="news.soon.text">Uskoro ovdje objavljujemo vijesti, slike i najave. Navratite ponovo!</p>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section class="section" id="o-nama">
+    <section class="section section-white" id="o-nama">
+      <div class="pattern pattern-light" aria-hidden="true"></div>
       <div class="container narrow">
-        <h2 class="section-title">O Nama</h2>
+        <h2 class="section-title" data-i18n="about.title">O nama</h2>
         <div class="ornament" aria-hidden="true"><span></span></div>
-        <p class="lead">Omladina ZBGA okuplja mlade Bošnjake iz Atlante i okoline. Kroz predavanja, sportske aktivnosti, druženja i humanitarne akcije gradimo snažnu i povezanu generaciju koja čuva svoj identitet, vjeru i tradiciju. Svi mladi su dobrodošli.</p>
+        <p class="lead" data-i18n="about.text">Omladina ZBGA okuplja mlade Bošnjake iz Atlante i okoline. Kroz predavanja, sportske aktivnosti, druženja i humanitarne akcije gradimo snažnu i povezanu generaciju koja čuva svoj identitet, vjeru i tradiciju. Svi mladi su dobrodošli.</p>
       </div>
     </section>
 
@@ -124,51 +183,51 @@
     <section class="section section-dark" id="odbor">
       <div class="pattern" aria-hidden="true"></div>
       <div class="container">
-        <h2 class="section-title">Upoznaj naš odbor</h2>
+        <h2 class="section-title" data-i18n="board.title">Upoznaj naš odbor</h2>
         <div class="ornament" aria-hidden="true"><span></span></div>
-        <p class="section-sub">Mladi koji vode Omladinu ZBGA</p>
+        <p class="section-sub" data-i18n="board.sub">Mladi koji vode Omladinu ZBGA</p>
 
-        <!-- To add a photo, put <img src="images/odbor/ime.jpg" alt="Ime Prezime"> inside .arch-frame -->
+        <!-- To add a photo, put <img src="images/odbor/ime.jpg" alt="Ime Prezime"> inside .arch-frame (replacing the initials) -->
         <div class="team">
           <article class="member reveal">
             <div class="arch-frame"><span class="initials">MD</span></div>
             <h3>Minela Dono</h3>
-            <p class="role">Predsjednica</p>
+            <p class="role" data-i18n="role.president.f">Predsjednica</p>
           </article>
           <article class="member reveal">
             <div class="arch-frame"><span class="initials">AČ</span></div>
             <h3>Amina Čerimović</h3>
-            <p class="role">Potpredsjednica</p>
+            <p class="role" data-i18n="role.vice.f">Potpredsjednica</p>
           </article>
           <article class="member reveal">
             <div class="arch-frame"><span class="initials">LK</span></div>
             <h3>Lamija Kuduzović</h3>
-            <p class="role">Sekretarka</p>
+            <p class="role" data-i18n="role.secretary.f">Sekretarka</p>
           </article>
           <article class="member reveal">
             <div class="arch-frame"><span class="initials">AM</span></div>
             <h3>Ajla Murtić</h3>
-            <p class="role">Blagajnica</p>
+            <p class="role" data-i18n="role.treasurer.f">Blagajnica</p>
           </article>
           <article class="member reveal">
             <div class="arch-frame"><span class="initials">AJ</span></div>
             <h3>Amela Jakupović</h3>
-            <p class="role">Organizatorica</p>
+            <p class="role" data-i18n="role.organizer.f">Organizatorica</p>
           </article>
           <article class="member reveal">
             <div class="arch-frame"><span class="initials">OH</span></div>
             <h3>Omar Huseinspahić</h3>
-            <p class="role">Organizator</p>
+            <p class="role" data-i18n="role.organizer.m">Organizator</p>
           </article>
           <article class="member reveal">
             <div class="arch-frame"><span class="initials">LČ</span></div>
             <h3>Lejla Čerimović</h3>
-            <p class="role">Organizatorica</p>
+            <p class="role" data-i18n="role.organizer.f">Organizatorica</p>
           </article>
           <article class="member reveal">
             <div class="arch-frame"><span class="initials">SA</span></div>
             <h3>Sara Avdić</h3>
-            <p class="role">Organizatorica</p>
+            <p class="role" data-i18n="role.organizer.f">Organizatorica</p>
           </article>
         </div>
       </div>
@@ -177,15 +236,32 @@
     <!-- Contact -->
     <section class="section section-white" id="kontakt">
       <div class="container">
-        <h2 class="section-title">Kontakt</h2>
+        <h2 class="section-title" data-i18n="contact.title">Kontakt</h2>
         <div class="ornament" aria-hidden="true"><span></span></div>
-        <p class="section-sub">Posjetite nas ili nas kontaktirajte</p>
+        <p class="section-sub" data-i18n="contact.sub">Posjetite nas ili nas kontaktirajte</p>
         <div class="contact-grid">
-          <div class="card card-left">
-            <h3>Adresa</h3>
-            <p>950 Grayson Hwy<br>Lawrenceville, GA 30046</p>
-            <h3>Telefon</h3>
-            <p><a href="tel:+17708649328">+1 (770) 864-9328</a></p>
+          <div class="card card-left contact-card">
+            <div class="contact-item">
+              <span class="card-icon icon-green"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+              <div>
+                <h3 data-i18n="contact.address">Adresa</h3>
+                <p><a href="https://maps.google.com/?q=950+Grayson+Hwy,+Lawrenceville,+GA+30046" target="_blank" rel="noopener">950 Grayson Hwy<br>Lawrenceville, GA 30046</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="card-icon icon-orange"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+              <div>
+                <h3 data-i18n="contact.phone">Telefon</h3>
+                <p><a href="tel:+17708649328">+1 (770) 864-9328</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="card-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+              <div>
+                <h3 data-i18n="contact.web">Zajednica</h3>
+                <p><a href="https://zbga.org" target="_blank" rel="noopener">zbga.org</a></p>
+              </div>
+            </div>
           </div>
           <div class="map">
             <iframe title="Mapa – Zajednica Bošnjaka Georgia" loading="lazy"
@@ -201,11 +277,18 @@
     <div class="pattern" aria-hidden="true"></div>
     <div class="container footer-inner">
       <img src="images/logo.png" alt="" class="footer-logo">
-      <p>&copy; <span id="year"></span> Zajednica Bošnjaka Georgia &middot; Omladina</p>
+      <p>&copy; <span id="year"></span> Zajednica Bošnjaka Georgia &middot; <span data-i18n="footer.youth">Omladina</span></p>
       <a href="https://zbga.org" target="_blank" rel="noopener">zbga.org</a>
     </div>
   </footer>
 
+  <a href="#pocetna" class="to-top" aria-label="Na vrh">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+  </a>
+
+  <script src="js/events.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/calendar.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
