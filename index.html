@@ -8,14 +8,16 @@
   <link rel="icon" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
   <!-- Hero -->
   <header class="hero" id="pocetna">
     <div class="hero-bg" aria-hidden="true"></div>
+    <div class="pattern" aria-hidden="true"></div>
 
     <a href="https://zbga.org" class="pill" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M3 12l6-6M3 12l6 6"/></svg>
@@ -23,9 +25,13 @@
     </a>
 
     <div class="container hero-content">
-      <img src="images/logo.png" alt="Zajednica Bošnjaka Georgia logo" class="hero-logo">
+      <div class="logo-frame">
+        <img src="images/logo.png" alt="Zajednica Bošnjaka Georgia logo" class="hero-logo">
+      </div>
+      <p class="bismillah" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
       <h1>Omladina ZBGA</h1>
       <p class="hero-text">Zajednica Bošnjaka Georgia - Mladi u službi vjere, znanja i zajednice.</p>
+      <div class="ornament" aria-hidden="true"><span></span></div>
 
       <div class="hero-buttons">
         <a href="#kontakt" class="btn btn-green">
@@ -36,12 +42,14 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
           Aktivnosti
         </a>
-        <a href="#novosti" class="btn btn-blue">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5"/></svg>
-          Novosti
+        <a href="#odbor" class="btn btn-blue">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M14 15c3 0 8 1 8 5"/></svg>
+          Naš odbor
         </a>
       </div>
     </div>
+
+    <div class="arches" aria-hidden="true"></div>
   </header>
 
   <main>
@@ -49,24 +57,25 @@
     <section class="section" id="aktivnosti">
       <div class="container">
         <h2 class="section-title">Aktivnosti</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
         <p class="section-sub">Programi za mlade naše zajednice</p>
         <div class="cards">
-          <article class="card">
+          <article class="card reveal">
             <span class="card-icon icon-green"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM8 7h8"/></svg></span>
             <h3>Predavanja</h3>
             <p>Sedmična predavanja i halke za mlade na teme vjere i svakodnevnog života.</p>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <span class="card-icon icon-orange"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
             <h3>Sport</h3>
             <p>Fudbal, košarka i druge sportske aktivnosti za sve uzraste.</p>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <span class="card-icon icon-purple"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M14 15c3 0 8 1 8 5"/></svg></span>
             <h3>Druženja</h3>
             <p>Iftari, izleti i večeri druženja koje povezuju mlade naše zajednice.</p>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <span class="card-icon icon-red"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/></svg></span>
             <h3>Humanitarni rad</h3>
             <p>Volontiranje i humanitarne akcije za pomoć onima kojima je potrebna.</p>
@@ -77,21 +86,23 @@
 
     <!-- News -->
     <section class="section section-white" id="novosti">
+      <div class="pattern pattern-light" aria-hidden="true"></div>
       <div class="container">
         <h2 class="section-title">Novosti</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
         <p class="section-sub">Najnovije vijesti i događaji</p>
         <div class="cards cards-3">
-          <article class="card card-left">
+          <article class="card card-left reveal">
             <span class="card-date">Uskoro</span>
             <h3>Prvi sastanak omladine</h3>
             <p>Detalji o prvom sastanku bit će objavljeni uskoro.</p>
           </article>
-          <article class="card card-left">
+          <article class="card card-left reveal">
             <span class="card-date">Uskoro</span>
             <h3>Sportski turnir</h3>
             <p>Pripremamo turnir za mlade. Pratite nas za više informacija.</p>
           </article>
-          <article class="card card-left">
+          <article class="card card-left reveal">
             <span class="card-date">Uskoro</span>
             <h3>Omladinski izlet</h3>
             <p>Planiramo zajednički izlet. Prijave uskoro.</p>
@@ -104,7 +115,52 @@
     <section class="section" id="o-nama">
       <div class="container narrow">
         <h2 class="section-title">O Nama</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
         <p class="lead">Omladina ZBGA okuplja mlade Bošnjake iz Atlante i okoline. Kroz predavanja, sportske aktivnosti, druženja i humanitarne akcije gradimo snažnu i povezanu generaciju koja čuva svoj identitet, vjeru i tradiciju. Svi mladi su dobrodošli.</p>
+      </div>
+    </section>
+
+    <!-- Board -->
+    <section class="section section-dark" id="odbor">
+      <div class="pattern" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="section-title">Upoznaj naš odbor</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
+        <p class="section-sub">Mladi koji vode Omladinu ZBGA</p>
+
+        <!-- To add a photo, put <img src="images/odbor/ime.jpg" alt="Ime Prezime"> inside .arch-frame -->
+        <div class="team">
+          <article class="member reveal">
+            <div class="arch-frame"><span class="initials">IP</span></div>
+            <h3>Ime Prezime</h3>
+            <p class="role">Predsjednik</p>
+          </article>
+          <article class="member reveal">
+            <div class="arch-frame"><span class="initials">IP</span></div>
+            <h3>Ime Prezime</h3>
+            <p class="role">Potpredsjednik</p>
+          </article>
+          <article class="member reveal">
+            <div class="arch-frame"><span class="initials">IP</span></div>
+            <h3>Ime Prezime</h3>
+            <p class="role">Sekretar</p>
+          </article>
+          <article class="member reveal">
+            <div class="arch-frame"><span class="initials">IP</span></div>
+            <h3>Ime Prezime</h3>
+            <p class="role">Blagajnik</p>
+          </article>
+          <article class="member reveal">
+            <div class="arch-frame"><span class="initials">IP</span></div>
+            <h3>Ime Prezime</h3>
+            <p class="role">Koordinator za sport</p>
+          </article>
+          <article class="member reveal">
+            <div class="arch-frame"><span class="initials">IP</span></div>
+            <h3>Ime Prezime</h3>
+            <p class="role">Koordinator za aktivnosti</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -112,6 +168,7 @@
     <section class="section section-white" id="kontakt">
       <div class="container">
         <h2 class="section-title">Kontakt</h2>
+        <div class="ornament" aria-hidden="true"><span></span></div>
         <p class="section-sub">Posjetite nas ili nas kontaktirajte</p>
         <div class="contact-grid">
           <div class="card card-left">
@@ -131,6 +188,7 @@
 
   <!-- Footer -->
   <footer class="site-footer">
+    <div class="pattern" aria-hidden="true"></div>
     <div class="container footer-inner">
       <img src="images/logo.png" alt="" class="footer-logo">
       <p>&copy; <span id="year"></span> Zajednica Bošnjaka Georgia &middot; Omladina</p>
