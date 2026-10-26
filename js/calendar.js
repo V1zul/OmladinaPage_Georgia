@@ -16,12 +16,20 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const text = (field) => (field && typeof field === 'object' ? field[I18N.lang] || field.bs || field.en : field) || '';
 
-  const events = (typeof EVENTS !== 'undefined' ? EVENTS : [])
-    .filter((e) => e && e.date)
-    .sort((a, b) => (a.date + (a.start || '')).localeCompare(b.date + (b.start || '')));
+  // Events from js/events.js plus events added in the admin panel
+  const fileEvents = typeof EVENTS !== 'undefined' ? EVENTS : [];
+  let remoteEvents = [];
+  let events = [];
+  let byDate = {};
 
-  const byDate = {};
-  events.forEach((e) => { (byDate[e.date] = byDate[e.date] || []).push(e); });
+  function rebuild() {
+    events = [...fileEvents, ...remoteEvents]
+      .filter((e) => e && e.date)
+      .sort((a, b) => (a.date + (a.start || '')).localeCompare(b.date + (b.start || '')));
+    byDate = {};
+    events.forEach((e) => { (byDate[e.date] = byDate[e.date] || []).push(e); });
+  }
+  rebuild();
 
   const now = new Date();
   const todayKey = keyOf(now.getFullYear(), now.getMonth(), now.getDate());
@@ -264,4 +272,12 @@
 
   document.addEventListener('langchange', render);
   render();
+
+  window.ZBGACalendar = {
+    setRemoteEvents(list) {
+      remoteEvents = list;
+      rebuild();
+      render();
+    },
+  };
 })();

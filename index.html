@@ -23,6 +23,9 @@
 
   <a href="#main" class="skip-link" data-i18n="skip">Preskoči na sadržaj</a>
 
+  <!-- Announcements (added from the admin panel) -->
+  <div id="announcements" aria-live="polite"></div>
+
   <!-- Sticky navigation (appears after the hero) -->
   <nav class="navbar" aria-label="Glavni meni">
     <div class="container navbar-inner">
@@ -161,7 +164,8 @@
         <h2 class="section-title" data-i18n="news.title">Novosti</h2>
         <div class="ornament" aria-hidden="true"><span></span></div>
         <p class="section-sub" data-i18n="news.sub">Najnovije vijesti iz Omladine</p>
-        <div class="coming-soon reveal">
+        <div class="cards cards-3" id="news-list" hidden></div>
+        <div class="coming-soon reveal" id="news-soon">
           <span class="coming-star" aria-hidden="true"></span>
           <h3 data-i18n="news.soon">Novosti uskoro</h3>
           <p data-i18n="news.soon.text">Uskoro ovdje objavljujemo vijesti, slike i najave. Navratite ponovo!</p>
@@ -278,9 +282,30 @@
     <div class="container footer-inner">
       <img src="images/logo.png" alt="" class="footer-logo">
       <p>&copy; <span id="year"></span> Zajednica Bošnjaka Georgia &middot; <span data-i18n="footer.youth">Omladina</span></p>
-      <a href="https://zbga.org" target="_blank" rel="noopener">zbga.org</a>
+      <div class="footer-links">
+        <a href="https://zbga.org" target="_blank" rel="noopener">zbga.org</a>
+        <button type="button" class="admin-trigger" aria-label="Admin">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          Admin
+        </button>
+      </div>
     </div>
   </footer>
+
+  <!-- Admin side panel -->
+  <div class="admin-backdrop" id="admin-backdrop"></div>
+  <aside class="admin-panel" id="admin-panel" aria-hidden="true" aria-labelledby="admin-heading" tabindex="-1">
+    <div class="admin-head">
+      <div class="admin-title">
+        <img src="images/logo.png" alt="">
+        <h2 id="admin-heading">Admin panel</h2>
+      </div>
+      <button type="button" class="admin-close" aria-label="Close admin panel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="admin-body" id="admin-body"></div>
+  </aside>
 
   <a href="#pocetna" class="to-top" aria-label="Na vrh">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
@@ -290,5 +315,7 @@
   <script src="js/i18n.js"></script>
   <script src="js/calendar.js"></script>
   <script src="js/main.js"></script>
+  <script type="module" src="js/live.js"></script>
+  <script type="module" src="js/admin.js"></script>
 </body>
 </html>
