@@ -80,19 +80,11 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   content: ""; position: absolute; inset: 0;
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
 }
-.hero .pattern { opacity: 0.07; }
 .hero-content { padding-top: 70px; padding-bottom: 110px; }
 
 .logo-frame {
   position: relative; display: inline-flex; align-items: center; justify-content: center;
   width: 170px; height: 170px; margin-bottom: 18px;
-}
-.logo-frame::before {
-  content: ""; position: absolute; inset: 0;
-  border: 2px solid rgba(230, 199, 102, 0.55);
-  -webkit-mask: var(--star) center / contain no-repeat;
-  mask: var(--star) center / contain no-repeat;
-  background: radial-gradient(circle, rgba(201, 162, 39, 0.25), rgba(201, 162, 39, 0.05));
 }
 .hero-logo { position: relative; width: 110px; height: auto; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4)); }
 
