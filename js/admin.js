@@ -11,7 +11,7 @@ const bs = (field) => (field && typeof field === 'object' ? field.bs || field.en
 
 let user; // undefined = still checking, null = logged out
 let tab = 'announcements';
-let lists = { announcements: [], events: [], news: [], admins: [] };
+let lists = { announcements: [], events: [], news: [], subscribers: [], admins: [] };
 let unsubs = [];
 let watching = false;
 let lastFocus = null;
@@ -95,7 +95,7 @@ async function start() {
       unsubs.forEach((fn) => fn && fn());
       unsubs = [];
       if (user && user.admin) {
-        ['announcements', 'events', 'news'].forEach(async (c) => unsubs.push(await backend.watch(c, (l) => { lists[c] = l; renderTab(); })));
+        ['announcements', 'events', 'news', 'subscribers'].forEach(async (c) => unsubs.push(await backend.watch(c, (l) => { lists[c] = l; renderTab(); })));
         backend.watchAdmins((l) => { lists.admins = l; renderTab(); }).then((fn) => unsubs.push(fn));
       }
       render();
@@ -148,6 +148,7 @@ const TABS = [
   ['announcements', 'Announcements'],
   ['events', 'Events'],
   ['news', 'News'],
+  ['subscribers', 'Subscribers'],
   ['admins', 'Admins'],
   ['account', 'My account'],
 ];
@@ -229,6 +230,25 @@ const VIEWS = {
     </form>
     <h3 class="a-sub">Posts</h3>
     ${itemList('news', (n) => ({ title: bs(n.title), meta: new Date(n.createdAt).toLocaleDateString() }))}`,
+
+  subscribers: () => {
+    const subs = lists.subscribers;
+    return `<div class="a-form">
+      <h3>Stay up to date sign-ups</h3>
+      <p class="a-hint">People who agreed to receive emails and texts about events and announcements only.
+        Only admins can see this list. Delete someone if they ask to unsubscribe.</p>
+      <p class="a-count"><strong>${subs.length}</strong> ${subs.length === 1 ? 'person' : 'people'} signed up</p>
+      <button type="button" class="a-btn" id="a-export" ${subs.length ? '' : 'disabled'}>Download list (Excel / CSV)</button>
+    </div>
+    <h3 class="a-sub">Sign-ups</h3>
+    ${subs.length ? `<ul class="a-list">${subs.map((p) => `<li>
+      <div><strong>${esc(p.name)}</strong>
+        <span><a href="mailto:${esc(p.email)}">${esc(p.email)}</a> · <a href="tel:${esc(p.phone)}">${esc(p.phone)}</a></span>
+        <span>${p.createdAt ? new Date(p.createdAt).toLocaleDateString() : ''}${p.lang === 'en' ? ' · English' : ''}</span></div>
+      <button type="button" class="a-del" data-del="${esc(p.id)}" data-col="subscribers" aria-label="Delete">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>
+      </button></li>`).join('')}</ul>` : '<p class="a-empty">Nobody has signed up yet.</p>'}`;
+  },
 
   admins: () => `
     <form class="a-form" data-form="admins">
@@ -313,6 +333,7 @@ body.addEventListener('submit', (e) => {
 
 body.addEventListener('click', async (e) => {
   if (e.target.closest('#a-logout')) { backend.logout(); return; }
+  if (e.target.closest('#a-export')) { exportSubscribers(); return; }
   const del = e.target.closest('[data-del]');
   if (!del) return;
   const col = del.dataset.col;
@@ -327,3 +348,27 @@ body.addEventListener('click', async (e) => {
     del.disabled = false;
   }
 });
+
+// Excel-friendly CSV of the sign-up list
+function exportSubscribers() {
+  // Prefix cells that start with = + - @ so spreadsheets never run them as formulas
+  const cell = (v) => {
+    let t = String(v ?? '');
+    if (/^[=+\-@\t\r]/.test(t)) t = "'" + t;
+    return '"' + t.replace(/"/g, '""') + '"';
+  };
+  const rows = [['Name', 'Email', 'Phone', 'Language', 'Signed up', 'Consent']]
+    .concat(lists.subscribers.map((p) => [
+      p.name, p.email, p.phone, p.lang === 'en' ? 'English' : 'Bosanski',
+      p.createdAt ? new Date(p.createdAt).toISOString().slice(0, 10) : '', p.consent ? 'Yes' : 'No',
+    ]));
+  const csv = '\uFEFF' + rows.map((r) => r.map(cell).join(',')).join('\r\n');
+  const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `omladina-zbga-subscribers-${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}

@@ -113,6 +113,11 @@
           <span data-i18n="hero.board">Naš odbor</span>
         </a>
       </div>
+
+      <button type="button" class="btn-subscribe" data-subscribe>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+        <span data-i18n="sub.button">Ostani u toku</span>
+      </button>
     </div>
 
     <div class="arches" aria-hidden="true"></div>
@@ -320,6 +325,47 @@
     </div>
   </footer>
 
+  <!-- Stay up to date (floating sign-up form) -->
+  <dialog class="subscribe-dialog" id="subscribe-dialog" aria-labelledby="sub-title">
+    <form class="subscribe-form" id="subscribe-form" novalidate>
+      <button type="button" class="sub-close" data-close aria-label="Zatvori">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <div class="sub-step" id="sub-step-form">
+        <span class="sub-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+        <h2 id="sub-title" data-i18n="sub.title">Ostani u toku</h2>
+        <p class="sub-intro" data-i18n="sub.intro">Primaj obavijesti o događajima i najavama Omladine ZBGA.</p>
+
+        <label><span data-i18n="sub.name">Ime i prezime</span>
+          <input type="text" name="name" maxlength="100" autocomplete="name" required></label>
+        <label><span data-i18n="sub.email">Email</span>
+          <input type="email" name="email" maxlength="200" autocomplete="email" required></label>
+        <label><span data-i18n="sub.phone">Broj telefona</span>
+          <input type="tel" name="phone" maxlength="30" autocomplete="tel" placeholder="(770) 555-0123" required></label>
+
+        <!-- Spam trap: hidden from people, bots fill it in -->
+        <label class="sub-hp" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+
+        <label class="sub-consent">
+          <input type="checkbox" name="consent" required>
+          <span data-i18n="sub.consent">Pristajem da me Omladina ZBGA kontaktira emailom i SMS porukama isključivo o događajima i najavama. Moji podaci neće biti korišteni ni za šta drugo niti dijeljeni s drugima. Mogu se odjaviti u bilo kojem trenutku.</span>
+        </label>
+
+        <button type="submit" class="btn btn-green sub-submit"><span data-i18n="sub.submit">Prijavi se</span></button>
+        <p class="sub-msg" role="alert"></p>
+        <p class="sub-fine" data-i18n="sub.fine">Mogu se primijeniti naknade za poruke. Za odjavu odgovorite STOP ili nas kontaktirajte.</p>
+      </div>
+
+      <div class="sub-step" id="sub-step-done" hidden>
+        <span class="sub-icon sub-icon-ok" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>
+        <h2 data-i18n="sub.done.title">Hvala!</h2>
+        <p class="sub-intro" data-i18n="sub.done.text">Prijavljeni ste. Javit ćemo vam se o sljedećem događaju.</p>
+        <button type="button" class="btn btn-green sub-submit" data-close><span data-i18n="sub.done.close">Zatvori</span></button>
+      </div>
+    </form>
+  </dialog>
+
   <!-- Admin side panel -->
   <div class="admin-backdrop" id="admin-backdrop"></div>
   <aside class="admin-panel" id="admin-panel" aria-hidden="true" aria-labelledby="admin-heading" tabindex="-1">
@@ -345,5 +391,6 @@
   <script src="js/main.js?v=dev"></script>
   <script type="module" src="js/live.js?v=dev"></script>
   <script type="module" src="js/admin.js?v=dev"></script>
+  <script type="module" src="js/subscribe.js?v=dev"></script>
 </body>
 </html>

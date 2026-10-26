@@ -51,6 +51,18 @@ const I18N = (() => {
     'footer.youth': 'Youth',
     'cal.today': 'Today',
     'cal.addAll': 'Add all events to your calendar',
+    'sub.button': 'Stay up to date',
+    'sub.title': 'Stay up to date',
+    'sub.intro': 'Get notified about ZBGA Youth events and announcements.',
+    'sub.name': 'Full name',
+    'sub.email': 'Email',
+    'sub.phone': 'Phone number',
+    'sub.consent': 'I agree that ZBGA Youth may contact me by email and text message only about events and announcements. My information will not be used for anything else or shared with anyone. I can unsubscribe at any time.',
+    'sub.submit': 'Sign up',
+    'sub.fine': 'Message and data rates may apply. Reply STOP or contact us to unsubscribe.',
+    'sub.done.title': 'Thank you!',
+    'sub.done.text': 'You are signed up. We will let you know about the next event.',
+    'sub.done.close': 'Close',
   };
 
   // Strings that only exist in scripts
@@ -72,6 +84,15 @@ const I18N = (() => {
       'cal.showUpcoming': 'Prikaži sve nadolazeće',
       'ann.more': 'Više',
       'ann.close': 'Zatvori obavijest',
+      'close': 'Zatvori',
+      'sub.err.name': 'Upišite ime i prezime.',
+      'sub.err.email': 'Upišite ispravnu email adresu.',
+      'sub.err.phone': 'Upišite ispravan broj telefona.',
+      'sub.err.consent': 'Potrebna je vaša saglasnost da bismo vas mogli kontaktirati.',
+      'sub.err.exists': 'Ova email adresa je već prijavljena.',
+      'sub.err.offline': 'Prijava trenutno nije dostupna. Pokušajte kasnije.',
+      'sub.err.generic': 'Nešto nije u redu. Pokušajte ponovo.',
+      'sub.sending': 'Šaljem…',
       months: ['januar', 'februar', 'mart', 'april', 'maj', 'juni', 'juli', 'august', 'septembar', 'oktobar', 'novembar', 'decembar'],
       monthsShort: ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'],
       weekdays: ['Pon', 'Uto', 'Sri', 'Čet', 'Pet', 'Sub', 'Ned'],
@@ -94,6 +115,15 @@ const I18N = (() => {
       'cal.showUpcoming': 'Show all upcoming',
       'ann.more': 'More',
       'ann.close': 'Close announcement',
+      'close': 'Close',
+      'sub.err.name': 'Please enter your full name.',
+      'sub.err.email': 'Please enter a valid email address.',
+      'sub.err.phone': 'Please enter a valid phone number.',
+      'sub.err.consent': 'We need your consent before we can contact you.',
+      'sub.err.exists': 'This email address is already signed up.',
+      'sub.err.offline': 'Sign-up is not available right now. Please try again later.',
+      'sub.err.generic': 'Something went wrong. Please try again.',
+      'sub.sending': 'Sending…',
       months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -102,7 +132,7 @@ const I18N = (() => {
   };
 
   // aria-label translations for icon-only buttons
-  const ariaTargets = { '#cal-prev': 'cal.prev', '#cal-next': 'cal.next', '.to-top': 'top', '.nav-toggle': 'menu' };
+  const ariaTargets = { '.sub-close': 'close', '#cal-prev': 'cal.prev', '#cal-next': 'cal.next', '.to-top': 'top', '.nav-toggle': 'menu' };
 
   const bs = {};
   const nodes = document.querySelectorAll('[data-i18n]');

@@ -88,7 +88,7 @@ export async function removeAdmin(uid) {
 }
 
 // ---------- Content (announcements, news, events) ----------
-const ORDER = { announcements: ['createdAt', 'desc'], news: ['createdAt', 'desc'], events: ['date', 'asc'] };
+const ORDER = { announcements: ['createdAt', 'desc'], news: ['createdAt', 'desc'], events: ['date', 'asc'], subscribers: ['createdAt', 'desc'] };
 
 export async function watch(collection, cb) {
   await init();
@@ -105,4 +105,15 @@ export async function add(collection, data) {
 export async function remove(collection, id) {
   await init();
   await F.deleteDoc(F.doc(db, collection, id));
+}
+
+// ---------- Stay up to date (public sign-up) ----------
+// The document id is the email, so the same email cannot sign up twice
+// (a second attempt is an update, which the rules do not allow).
+export async function subscribe({ name, email, phone, lang }) {
+  await init();
+  const id = email.toLowerCase();
+  await F.setDoc(F.doc(db, 'subscribers', id), {
+    name, email: id, phone, consent: true, lang, createdAt: F.serverTimestamp(),
+  });
 }
