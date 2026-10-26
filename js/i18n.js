@@ -63,6 +63,7 @@ const I18N = (() => {
     'sub.done.title': 'Thank you!',
     'sub.done.text': 'You are signed up. We will let you know about the next event.',
     'sub.done.close': 'Close',
+    'sub.done.email': 'We sent a confirmation to your email – please also check your spam folder.',
   };
 
   // Strings that only exist in scripts

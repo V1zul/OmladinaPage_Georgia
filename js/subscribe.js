@@ -1,5 +1,6 @@
 // "Stay up to date" floating sign-up form
 import * as backend from './backend.js?v=dev';
+import { emailEnabled, sendConfirmation } from './confirm-email.js?v=dev';
 
 const dialog = document.getElementById('subscribe-dialog');
 const form = document.getElementById('subscribe-form');
@@ -53,7 +54,11 @@ form.addEventListener('submit', async (e) => {
   submitBtn.disabled = true;
   submitLabel.textContent = I18N.t('sub.sending');
   try {
-    await backend.subscribe({ name, email, phone, lang: I18N.lang });
+    const lang = I18N.lang;
+    await backend.subscribe({ name, email, phone, lang });
+    // The sign-up is saved; the confirmation email is a bonus and never blocks it
+    sendConfirmation({ name, email: email.toLowerCase(), phone, lang }).catch((err) => console.warn('Confirmation email not sent:', err));
+    document.getElementById('sub-done-email').hidden = !emailEnabled;
     form.reset();
     stepForm.hidden = true;
     stepDone.hidden = false;

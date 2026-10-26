@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light only">
+  <title>{{subject}}</title>
+</head>
+<body style="margin:0; padding:0; background:#f2f1ec; font-family:Arial, Helvetica, sans-serif; color:#2d3330;">
+  <div style="display:none; max-height:0; overflow:hidden; opacity:0;">{{preheader}}</div>
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f2f1ec;">
+    <tr>
+      <td align="center" style="padding:32px 12px;">
+
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px; background:#ffffff; border-radius:16px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,0.08);">
+
+          <!-- Header -->
+          <tr>
+            <td align="center" style="background:#13291f; padding:36px 24px 28px;">
+              <img src="{{logo_url}}" width="96" alt="Zajednica Bošnjaka Georgia" style="display:block; width:96px; height:auto; border:0; margin:0 auto 14px;">
+              <div style="font-family:Arial, Helvetica, sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:#e6c766;">Zajednica Bošnjaka Georgia</div>
+              <div style="font-family:Arial, Helvetica, sans-serif; font-size:26px; font-weight:bold; color:#ffffff; margin-top:6px;">{{org_name}}</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="height:4px; line-height:4px; font-size:0; background:#c9a227;">&nbsp;</td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:36px 36px 8px;">
+              <div style="text-align:center; font-size:22px; color:#c9a227; margin-bottom:6px;">&#10022;</div>
+              <h1 style="margin:0 0 20px; text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:24px; line-height:1.3; color:#1f3d2f;">{{heading}}</h1>
+              <p style="margin:0 0 14px; font-size:16px; line-height:1.6;">{{greeting}}</p>
+              <p style="margin:0 0 22px; font-size:16px; line-height:1.6;">{{intro}}</p>
+
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f7f7f4; border-radius:12px; border-left:4px solid #c9a227;">
+                <tr>
+                  <td style="padding:18px 20px;">
+                    <div style="font-size:14px; font-weight:bold; color:#1f3d2f; margin-bottom:8px;">{{list_title}}</div>
+                    <div style="font-size:15px; line-height:1.7; color:#2d3330;">
+                      <span style="color:#c9a227;">&#9733;</span>&nbsp; {{item1}}<br>
+                      <span style="color:#c9a227;">&#9733;</span>&nbsp; {{item2}}<br>
+                      <span style="color:#c9a227;">&#9733;</span>&nbsp; {{item3}}
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:22px 0 0; font-size:14px; line-height:1.6; color:#6b7570;">{{details_label}}<br>
+                <strong style="color:#1f3d2f;">{{to_email}}</strong> &middot; <strong style="color:#1f3d2f;">{{phone}}</strong></p>
+            </td>
+          </tr>
+
+          <!-- Button -->
+          <tr>
+            <td align="center" style="padding:28px 36px 34px;">
+              <a href="{{site_url}}" style="display:inline-block; background:#2ea84f; color:#ffffff; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; padding:14px 30px; border-radius:10px;">{{button_text}}</a>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#13291f; padding:24px 28px; text-align:center;">
+              <p style="margin:0 0 8px; font-size:12px; line-height:1.6; color:rgba(255,255,255,0.75);">{{privacy}}</p>
+              <p style="margin:0 0 12px; font-size:12px; line-height:1.6; color:rgba(255,255,255,0.75);">{{unsubscribe}}</p>
+              <p style="margin:0; font-size:12px; color:#e6c766;">950 Grayson Hwy, Lawrenceville, GA 30046 &middot; <a href="https://zbga.org" style="color:#e6c766;">zbga.org</a></p>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
