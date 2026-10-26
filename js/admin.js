@@ -1,5 +1,5 @@
 // Admin side panel: login, announcements, events, news, admin accounts
-import * as backend from './backend.js';
+import * as backend from './backend.js?v=dev';
 
 const panel = document.getElementById('admin-panel');
 const backdrop = document.getElementById('admin-backdrop');

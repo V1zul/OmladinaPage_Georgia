@@ -1,5 +1,5 @@
 // Data + login layer (Firebase Auth + Firestore). The rest of the site only talks to this file.
-import { firebaseConfig } from './firebase-config.js';
+import { firebaseConfig } from './firebase-config.js?v=dev';
 
 const SDK = 'https://www.gstatic.com/firebasejs/13.1.0/';
 

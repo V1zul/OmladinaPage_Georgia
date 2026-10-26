@@ -6,6 +6,8 @@
   <title>Omladina – Zajednica Bošnjaka Georgia</title>
   <meta name="description" content="Omladina Zajednice Bošnjaka Georgia (ZBGA) – aktivnosti, događaji i program za mlade u Atlanti.">
   <meta name="theme-color" content="#13291f">
+  <!-- Replaced with the commit id on every deploy (see .github/workflows/deploy.yml) -->
+  <meta name="site-version" content="dev">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Omladina ZBGA – Zajednica Bošnjaka Georgia">
   <meta property="og:description" content="Mladi u službi vjere, znanja i zajednice. Aktivnosti, događaji i odbor Omladine ZBGA.">
@@ -16,8 +18,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="css/style.css?v=dev">
+  <script>
+    document.documentElement.classList.add('js');
+
+    // Always show the newest version: if a newer deploy exists than the copy the
+    // browser has cached, reload once with fresh files (like a hard refresh).
+    (function () {
+      // Remove the ?v=… added by a refresh so the address stays clean
+      if (/[?&]v=/.test(location.search) && window.URL) {
+        var clean = new URL(location.href);
+        clean.searchParams.delete('v');
+        history.replaceState(null, '', clean.pathname + clean.search + clean.hash);
+      }
+      var current = document.querySelector('meta[name="site-version"]').content;
+      if (current === 'dev' || !window.fetch) return;
+      fetch('version.json?t=' + Date.now(), { cache: 'no-store' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (!d || !d.version || d.version === current) return;
+          var key = 'reloaded-' + d.version;
+          try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, '1'); } catch (e) { return; }
+          var url = new URL(location.href);
+          url.searchParams.set('v', d.version);
+          location.replace(url.toString());
+        })
+        .catch(function () {});
+    })();
+  </script>
 </head>
 <body>
 
@@ -311,11 +339,11 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
   </a>
 
-  <script src="js/events.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/calendar.js"></script>
-  <script src="js/main.js"></script>
-  <script type="module" src="js/live.js"></script>
-  <script type="module" src="js/admin.js"></script>
+  <script src="js/events.js?v=dev"></script>
+  <script src="js/i18n.js?v=dev"></script>
+  <script src="js/calendar.js?v=dev"></script>
+  <script src="js/main.js?v=dev"></script>
+  <script type="module" src="js/live.js?v=dev"></script>
+  <script type="module" src="js/admin.js?v=dev"></script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+# Publishes the website to GitHub Pages on every push to main.
+# Each deploy stamps a new version (the commit id) into the files, so visitors'
+# browsers always load the newest CSS/JS instead of an old cached copy.
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build site with version stamp
+        run: |
+          VERSION="${GITHUB_SHA::8}"
+          mkdir _site
+          git ls-files -z | grep -zv '^\.github/' | xargs -0 cp --parents -t _site
+          grep -rl '?v=dev' _site --include='*.html' --include='*.js' --include='*.css' | xargs -r sed -i "s/?v=dev/?v=$VERSION/g"
+          sed -i "s/name=\"site-version\" content=\"dev\"/name=\"site-version\" content=\"$VERSION\"/" _site/index.html
+          echo "{\"version\":\"$VERSION\"}" > _site/version.json
+          grep -q "content=\"$VERSION\"" _site/index.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

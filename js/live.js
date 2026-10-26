@@ -1,5 +1,5 @@
 // Shows announcements, news and events saved from the admin panel
-import * as backend from './backend.js';
+import * as backend from './backend.js?v=dev';
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const text = (field) => (field && typeof field === 'object' ? field[I18N.lang] || field.bs || field.en : field) || '';
