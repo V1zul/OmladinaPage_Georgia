@@ -13,4 +13,11 @@
     appId: '...',
   };
 */
-export const firebaseConfig = null;
+export const firebaseConfig = {
+  apiKey: 'AIzaSyBEBtJcWr0hYmzCs-l-2Z1B8zS4Z5IxZmQ',
+  authDomain: 'omladinapage.firebaseapp.com',
+  projectId: 'omladinapage',
+  storageBucket: 'omladinapage.firebasestorage.app',
+  messagingSenderId: '588104812800',
+  appId: '1:588104812800:web:18d4932fb9e51e48c70be5',
+};

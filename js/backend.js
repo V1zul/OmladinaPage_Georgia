@@ -1,7 +1,7 @@
 // Data + login layer (Firebase Auth + Firestore). The rest of the site only talks to this file.
 import { firebaseConfig } from './firebase-config.js';
 
-const SDK = 'https://www.gstatic.com/firebasejs/10.12.2/';
+const SDK = 'https://www.gstatic.com/firebasejs/13.1.0/';
 
 export const enabled = !!(firebaseConfig && firebaseConfig.apiKey);
 
